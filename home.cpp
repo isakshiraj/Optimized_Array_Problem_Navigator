@@ -284,7 +284,7 @@ public:
     PrefixXorHashmapProblems()
     {
         categoryTitle = "Prefix Xor and Hashmap ";
-        problems.push_back(Problem("Count Subarrays with Given XOR", "O(n)", "O(n)"));
+        problems.push_back(Problem("Count Subarrays with Given XOR = k", "O(n)", "O(n)"));
     }
 };
 
@@ -298,7 +298,7 @@ public:
     KadaneProblems()
     {
         categoryTitle = "Based on Kadane's Algo";
-        problems.push_back(Problem("Maximum Subarray Sum (Kadane's Algorithm)", "O(n)", "O(1)"));
+        problems.push_back(Problem("Maximum Subarray Sum", "O(n)", "O(1)"));
         problems.push_back(Problem("Print Subarray with Maximum Subarray Sum", "O(n)", "O(1)"));
         problems.push_back(Problem("Maximum Product Subarray", "O(n)", "O(1)"));
     }
@@ -314,11 +314,13 @@ public:
     SubarrayProblems()
     {
         categoryTitle = "Subarray Problems";
-        problems.push_back(Problem("Maximum Subarray Sum (Kadane's)", "O(n)", "O(1)"));
-        problems.push_back(Problem("Longest Subarray with Sum = K (Positive)", "O(n)", "O(1)"));
+        problems.push_back(Problem("Maximum Subarray Sum", "O(n)", "O(1)"));
+        problems.push_back(Problem("Print Subarray with Maximum Subarray Sum", "O(n)", "O(1)"));
+        problems.push_back(Problem("Longest Subarray with Sum = K (Positive + Negative)", "O(n)", "O(n)"));
         problems.push_back(Problem("Largest Subarray with Sum = 0", "O(n)", "O(n)"));
         problems.push_back(Problem("Maximum Product Subarray", "O(n)", "O(1)"));
-        problems.push_back(Problem("Count of Subarrays with Given XOR", "O(n)", "O(n)"));
+        problems.push_back(Problem("Count Subarrays with Given Sum", "O(n)", "O(n)"));
+        problems.push_back(Problem("Count of Subarrays with Given XOR = k", "O(n)", "O(n)"));
     }
 };
 
