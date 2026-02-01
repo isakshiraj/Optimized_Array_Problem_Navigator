@@ -6,8 +6,7 @@
 
 ## 📌 Overview
 
-**Optimized Array Problem Navigator** is a console-based project designed to simulate categorized array problem sets while showcasing optimal time and space complexities. This tool is crafted to demonstrate **strong object-oriented programming (OOP) principles**, making it not just educational for DSA learning but also technically sound and resume-worthy.
-
+**Optimized Array Problem Navigator** is a console-based project designed to simulate categorized array problem sets while showcasing optimal time and space complexities. This tool is crafted to demonstrate **strong object-oriented programming (OOP) principles**.
 This simulator provides a structured approach to viewing commonly asked array-based DSA problems from different categories — like Two Pointer, Bit Manipulation, Kadane's Algorithm, and more — helping learners focus on **efficiency and pattern recognition**.
 
 ---

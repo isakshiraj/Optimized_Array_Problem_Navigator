@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*****************************Encapsulated Problem class******************************/
@@ -13,11 +11,24 @@ private:
 
 public:
     Problem(string n, string t, string s)
-        : name(n), timeComplexity(t), spaceComplexity(s) {}
+    {
+        name = n;
+        timeComplexity = t;
+        spaceComplexity = s;
+    }
 
-    string getName() const { return name; }
-    string getTimeComplexity() const { return timeComplexity; }
-    string getSpaceComplexity() const { return spaceComplexity; }
+    string getName() const
+    {
+        return name;
+    }
+    string getTimeComplexity() const
+    {
+        return timeComplexity;
+    }
+    string getSpaceComplexity() const
+    {
+        return spaceComplexity;
+    }
 };
 
 /*****************************Abstract base class******************************/
@@ -26,7 +37,6 @@ class ArrayBase
 public:
     virtual void showProblemList() = 0;
     virtual void showOptimalComplexity(int choice) = 0;
-    virtual ~ArrayBase() {}
 };
 
 /*****************************ArrayProblemSet base class for submenu class******************************/
@@ -37,38 +47,38 @@ protected:
     string categoryTitle;
 
 public:
-    void showProblemList() override
+
+    int getTotalProblems() const
+    {
+        return problems.size();
+    }    
+
+    void showProblemList()
     {
         cout << "\n======= " << categoryTitle << " =======\n";
-        for (int i = 0; i < problems.size(); ++i)
+        for (int i = 0; i < problems.size(); i++)
         {
             cout << i + 1 << ". " << problems[i].getName() << endl;
         }
         cout << problems.size() + 1 << ". Back to Main Menu" << endl;
     }
 
-    int getTotalProblems() const
-    {
-        return problems.size();
-    }
-
-    void showOptimalComplexity(int choice) override
+    void showOptimalComplexity(int choice)
     {
         if (choice >= 1 && choice <= problems.size())
         {
-            const Problem &p = problems[choice - 1];
             cout << "\n==============================\n";
-            cout << "Problem: " << p.getName() << endl;
+            cout << "Problem: " << problems[choice - 1].getName() << endl;
             cout << "------------------------------\n";
-            cout << "Optimal Time Complexity : " << p.getTimeComplexity() << endl;
-            cout << "Optimal Space Complexity: " << p.getSpaceComplexity() << endl;
+            cout << "Optimal Time Complexity : " << problems[choice - 1].getTimeComplexity() << endl;
+            cout << "Optimal Space Complexity: " << problems[choice - 1].getSpaceComplexity() << endl;
             cout << "------------------------------\n";
         }
     }
 };
 
-
 /*******************************Derived Clas****************************/
+
 class BitManipulationProblems : public ArrayProblemSet
 {
 public:
@@ -81,7 +91,6 @@ public:
         problems.push_back(Problem("Single Number III (Two unique numbers)", "O(n)", "O(1)"));
     }
 };
-
 
 class SimpleTraversalProblems : public ArrayProblemSet
 {
@@ -100,7 +109,6 @@ public:
     }
 };
 
-
 class MathTraversalProblems : public ArrayProblemSet
 {
 public:
@@ -110,7 +118,6 @@ public:
         problems.push_back(Problem("Find the Repeating and Missing Number", "O(n)", "O(1)"));
     }
 };
-
 
 class SortingTraversalProblems : public ArrayProblemSet
 {
@@ -122,8 +129,6 @@ public:
     }
 };
 
-
-
 class UnorderedSetTraversalProblems : public ArrayProblemSet
 {
 
@@ -134,8 +139,6 @@ public:
         problems.push_back(Problem("Longest Consecutive Sequence", "O(n)", "O(n)"));
     }
 };
-
-
 
 class TwoPointerProblems : public ArrayProblemSet
 {
@@ -153,9 +156,6 @@ public:
     }
 };
 
-
-
-
 class SortingPointersProblems : public ArrayProblemSet
 {
 
@@ -167,9 +167,6 @@ public:
         problems.push_back(Problem("4 Sum Problem", "O(n^3)", "O(no extra space)"));
     }
 };
-
-
-
 
 class ReverseTraversalProblems : public ArrayProblemSet
 {
@@ -184,9 +181,6 @@ public:
     }
 };
 
-
-
-
 class StockBuySellProblems : public ArrayProblemSet
 {
 private:
@@ -197,9 +191,6 @@ public:
         problems.push_back(Problem("Stock Buy and Sell to Maximize Profit", "O(n)", "O(1)"));
     }
 };
-
-
-
 
 class DutchNationalFlagProblems : public ArrayProblemSet
 {
@@ -212,9 +203,6 @@ public:
     }
 };
 
-
-
-
 class MooreVotingProblems : public ArrayProblemSet
 {
 
@@ -226,9 +214,6 @@ public:
         problems.push_back(Problem("Majority Element (> n/3 times)", "O(n)", "O(1)"));
     }
 };
-
-
-
 
 class MatrixProblems : public ArrayProblemSet
 {
@@ -243,9 +228,6 @@ public:
     }
 };
 
-
-
-
 class MergeSortAdvancedProblems : public ArrayProblemSet
 {
 
@@ -257,9 +239,6 @@ public:
         problems.push_back(Problem("Count Reverse Pairs", "O(2n log n) ~= O(n log n)", "O(n)"));
     }
 };
-
-
-
 
 class PrefixSumHashmapProblems : public ArrayProblemSet
 {
@@ -274,9 +253,6 @@ public:
     }
 };
 
-
-
-
 class PrefixXorHashmapProblems : public ArrayProblemSet
 {
 
@@ -287,9 +263,6 @@ public:
         problems.push_back(Problem("Count Subarrays with Given XOR = k", "O(n)", "O(n)"));
     }
 };
-
-
-
 
 class KadaneProblems : public ArrayProblemSet
 {
@@ -303,9 +276,6 @@ public:
         problems.push_back(Problem("Maximum Product Subarray", "O(n)", "O(1)"));
     }
 };
-
-
-
 
 class SubarrayProblems : public ArrayProblemSet
 {
@@ -324,169 +294,141 @@ public:
     }
 };
 
-// Sub menu
-void problemSubMenu(ArrayProblemSet *category)
+/***************************Sub Menu********************************/
+
+void problemSubMenu(ArrayProblemSet &category)
 {
     int choice;
     while (true)
     {
-        category->showProblemList();
+        category.showProblemList();
         cout << "Enter your choice: ";
         cin >> choice;
-        if (choice == category->getTotalProblems() + 1)
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a number.\n";
+            continue;
+        }
+
+        if (choice == category.getTotalProblems() + 1)
             break;
-        if(choice > category->getTotalProblems() + 1){ 
+
+        if (choice >= 1 && choice <= category.getTotalProblems())
+        {
+            category.showOptimalComplexity(choice);
+        }
+        else
+        {
             cout << "Invalid choice. Please try again.\n";
-        }  
-        category->showOptimalComplexity(choice);
+        }
     }
 }
 
-// Main Menu
+/******************************Main Menu************************/
 void mainMenu()
 {
+    BitManipulationProblems bitManipulation;
+    SimpleTraversalProblems simpleTraversal;
+    MathTraversalProblems mathTraversal;
+    SortingTraversalProblems sortingTraversal;
+    UnorderedSetTraversalProblems unorderedSetTraversal;
+    TwoPointerProblems twoPointerProblems;
+    SortingPointersProblems sortingPointersProblems;
+    ReverseTraversalProblems reverseTraversalProblems;
+    StockBuySellProblems stockBuySellProblems;
+    DutchNationalFlagProblems dutchNationalFlagProblems;
+    MooreVotingProblems mooreVotingProblems;
+    MatrixProblems matrixProblems;
+    MergeSortAdvancedProblems mergeSortAdvancedProblems;
+    PrefixSumHashmapProblems prefixSumHashmapProblems;
+    PrefixXorHashmapProblems prefixXorHashmapProblems;
+    KadaneProblems kadaneProblems;
+    SubarrayProblems subarrayProblems;
+
+    ArrayProblemSet *categories[] = {
+        &bitManipulation,
+        &simpleTraversal,
+        &mathTraversal,
+        &sortingTraversal,
+        &unorderedSetTraversal,
+        &twoPointerProblems,
+        &sortingPointersProblems,
+        &reverseTraversalProblems,
+        &stockBuySellProblems,
+        &dutchNationalFlagProblems,
+        &mooreVotingProblems,
+        &matrixProblems,
+        &mergeSortAdvancedProblems,
+        &prefixSumHashmapProblems,
+        &prefixXorHashmapProblems,
+        &kadaneProblems,
+        &subarrayProblems};
+
+    string categoryNames[] = {
+        "Bit Manipulation",
+        "Simple Traversal",
+        "Maths + Traversal",
+        "Sorting + Traversal",
+        "Unordered Set + Traversal",
+        "Two-Pointer Approach",
+        "Sorting + Pointers",
+        "Reverse + Traversal",
+        "Stock Buy and Sell",
+        "Dutch National Flag Algorithm",
+        "Moore Voting Algorithm",
+        "Matrix Based",
+        "Merge Sort Advanced",
+        "Prefix Sum + Hashmap",
+        "Prefix XOR + Hashmap",
+        "Kadane's Algorithm",
+        "Subarray Problems"};
+
+    int totalCategories = sizeof(categories) / sizeof(categories[0]);
     int choice;
+
     while (true)
     {
         cout << "\n===========================================\n";
         cout << "      ARRAY PROBLEM SIMULATOR (OOP)        \n";
         cout << "     View Optimal Time & Space Only        \n";
         cout << "===========================================\n";
-        cout << "1. Bit Manipulation\n";
-        cout << "2. Simple Traversal\n";
-        cout << "3. Maths Operation + Simple Traversal\n";
-        cout << "4. Sorting + Simple Traversal\n";
-        cout << "5. Unordered Set Operations + Traversal\n";
-        cout << "6. Two-Pointer Approach\n";
-        cout << "7. Sorting + Pointers Approach\n";
-        cout << "8. Simple Traversal + Reverse Operation\n";
-        cout << "9. Stock Buy and Sell\n";
-        cout << "10. Dutch National Flag Algo\n";
-        cout << "11. Moore Voting Algo\n";
-        cout << "12. Matrix\n";
-        cout << "13. Merge Sort (Advance)\n";
-        cout << "14. Prefix Sum and Hashmap Approach\n";
-        cout << "15. Prefix XOR and Hashmap Approach\n";
-        cout << "16. Kadane Algo\n";
-        cout << "17. Subarray Problem\n";
-        cout << "18. Exit\n\n";
+
+        for (int i = 0; i < totalCategories; i++)
+            cout << i + 1 << ". " << categoryNames[i] << "\n";
+
+        cout << totalCategories + 1 << ". Exit\n\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
-        switch (choice)
+        if (cin.fail())
         {
-        case 1:
-        {
-            BitManipulationProblems bit;
-            problemSubMenu(&bit);
-            break;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a number.\n";
+            continue;
         }
-        case 2:
+
+        if (choice == totalCategories + 1)
         {
-            SimpleTraversalProblems simple;
-            problemSubMenu(&simple);
-            break;
-        }
-        case 3:
-        {
-            MathTraversalProblems math;
-            problemSubMenu(&math);
-            break;
-        }
-        case 4:
-        {
-            SortingTraversalProblems st;
-            problemSubMenu(&st);
-            break;
-        }
-        case 5:
-        {
-            UnorderedSetTraversalProblems ust;
-            problemSubMenu(&ust);
-            break;
-        }
-        case 6:
-        {
-            TwoPointerProblems tp;
-            problemSubMenu(&tp);
-            break;
-        }
-        case 7:
-        {
-            SortingPointersProblems sp;
-            problemSubMenu(&sp);
-            break;
-        }
-        case 8:
-        {
-            ReverseTraversalProblems rt;
-            problemSubMenu(&rt);
-            break;
-        }
-        case 9:
-        {
-            StockBuySellProblems stock;
-            problemSubMenu(&stock);
-            break;
-        }
-        case 10:
-        {
-            DutchNationalFlagProblems dnf;
-            problemSubMenu(&dnf);
-            break;
-        }
-        case 11:
-        {
-            MooreVotingProblems moore;
-            problemSubMenu(&moore);
-            break;
-        }
-        case 12:
-        {
-            MatrixProblems matrix;
-            problemSubMenu(&matrix);
-            break;
-        }
-        case 13:
-        {
-            MergeSortAdvancedProblems mergesort;
-            problemSubMenu(&mergesort);
-            break;
-        }
-        case 14:
-        {
-            PrefixSumHashmapProblems prefixSum;
-            problemSubMenu(&prefixSum);
-            break;
-        }
-        case 15:
-        {
-            PrefixXorHashmapProblems prefixXor;
-            problemSubMenu(&prefixXor);
-            break;
-        }
-        case 16:
-        {
-            KadaneProblems kadane;
-            problemSubMenu(&kadane);
-            break;
-        }
-        case 17:
-        {
-            SubarrayProblems sub;
-            problemSubMenu(&sub);
-            break;
-        }
-        case 18:
             cout << "\nThank you for using Array Problem Simulator.\n";
-            return;
-        default:
+            break;
+        }
+
+        if (choice >= 1 && choice <= totalCategories)
+        {
+            problemSubMenu(*categories[choice - 1]);
+        }
+        else
+        {
             cout << "Invalid choice. Please try again.\n";
         }
     }
 }
 
-// Run
+/*******************************Main Function******************************/
 int main()
 {
     mainMenu();
