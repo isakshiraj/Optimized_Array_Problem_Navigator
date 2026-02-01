@@ -1,81 +1,61 @@
-# 🚀 Optimized Array Problem Navigator
+# Optimized Array Problem Navigator
 
-> **A C++ Console-Based Tool to Explore Array Problems with Optimal Time & Space Complexities using Object-Oriented Programming**
+Optimized Array Problem Navigator is a C++ console-based application built using core object-oriented programming principles to present categorized array problems along with their optimal time and space complexities for efficient learning.
 
----
-
-## 📌 Overview
-
-**Optimized Array Problem Navigator** is a console-based project designed to simulate categorized array problem sets while showcasing optimal time and space complexities. This tool is crafted to demonstrate **strong object-oriented programming (OOP) principles**.
-This simulator provides a structured approach to viewing commonly asked array-based DSA problems from different categories — like Two Pointer, Bit Manipulation, Kadane's Algorithm, and more — helping learners focus on **efficiency and pattern recognition**.
+It provides a structured way to review commonly asked array-based DSA problems across multiple categories such as Two Pointer, Bit Manipulation, Kadane’s Algorithm, and more. The focus is on efficiency, pattern recognition, and complexity analysis.
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-* ✅ Explore **17 categorized** array problem types.
-* ✅ Displays only **optimal time and space complexity** for each problem.
-* ✅ Designed using core **OOP pillars**:
-
-  * **Abstraction** (via abstract base class `ArrayBase`)
-  * **Encapsulation** (through encapsulated `Problem` class)
-  * **Inheritance** (hierarchical inheritance of problem categories)
-  * **Polymorphism** (runtime polymorphism for menu operations)
-* ✅ Built entirely using **C++ (No file/database dependencies)**.
-* ✅ Ideal for quick DSA revision and OOP demonstration in interviews.
-
----
-
-## 🧠 Tech Stack
-
-| Technology     | Purpose                            |
-| -------------- | ---------------------------------- |
-| **C++**        | Core development using OOP         |
-| **OOP**        | Structure, design & logic modeling |
-| **Console UI** | Simple CLI-based navigation        |
+- Covers **17 categorized array problem types**
+- Displays **only optimal time and space complexity** for each problem
+- Demonstrates core **OOP principles**:
+  - **Abstraction** using an abstract base class `ArrayBase`
+  - **Encapsulation** through a well-defined `Problem` class
+  - **Inheritance** via category-specific derived classes
+  - **Polymorphism** using virtual function overriding
+- Implemented entirely in **C++**
+- No file system or database dependency
+- Suitable for **DSA revision** and **OOP demonstration in interviews**
 
 ---
 
-## 🗂️ Problem Categories Included
+## Tech Stack
 
-The following problem categories are covered:
-
-1. Bit Manipulation
-2. Simple Traversal
-3. Math Operation + Traversal
-4. Sorting + Traversal
-5. Unordered Set + Traversal
-6. Two-Pointer Approach
-7. Sorting + Pointers
-8. Reverse + Traversal
-9. Stock Buy and Sell
-10. Dutch National Flag Algorithm
-11. Moore’s Voting Algorithm
-12. Matrix-Based Problems
-13. Merge Sort Advanced
-14. Prefix Sum + Hashmap
-15. Prefix XOR + Hashmap
-16. Kadane’s Algorithm
-17. Subarray Problems
-
-Each category contains handpicked DSA problems with their **optimal complexities only**.
+| Technology | Purpose |
+|----------|---------|
+| C++ | Core development using OOP |
+| OOP | Design, structure, and logic modeling |
+| Console UI | Command-line based navigation |
 
 ---
 
-## 🏗️ Project Structure
+## Problem Categories Included
 
-```bash
-├── main.cpp                 # Entry point with main menu
-├── Problem class            # Encapsulates individual problems
-├── ArrayBase class          # Abstract base class for problem sets
-├── ArrayProblemSet class    # Shared behavior for all categories
-├── Category subclasses      # Derived classes, each for a problem type
-└── README.md                # You're here!
-```
+1. Bit Manipulation  
+2. Simple Traversal  
+3. Math Operation + Traversal  
+4. Sorting + Traversal  
+5. Unordered Set + Traversal  
+6. Two-Pointer Approach  
+7. Sorting + Pointers  
+8. Reverse + Traversal  
+9. Stock Buy and Sell  
+10. Dutch National Flag Algorithm  
+11. Moore’s Voting Algorithm  
+12. Matrix-Based Problems  
+13. Merge Sort Advanced  
+14. Prefix Sum + Hashmap  
+15. Prefix XOR + Hashmap  
+16. Kadane’s Algorithm  
+17. Subarray Problems  
+
+Each category contains selected DSA problems along with **only their optimal time and space complexities**.
 
 ---
 
-## 💡 OOP Concepts in Action
+## OOP Concepts in Action
 
 | OOP Pillar    | Implementation                                                                |
 | ------------- | ----------------------------------------------------------------------------- |
@@ -86,7 +66,7 @@ Each category contains handpicked DSA problems with their **optimal complexities
 
 ---
 
-## 🖥️ How to Run
+## How to Run
 
 1. Clone this repository:
 
@@ -106,17 +86,16 @@ Each category contains handpicked DSA problems with their **optimal complexities
 
 ---
 
-## 🧩 Sample Console Output
+## Sample Console Output
 
 ![Screenshot 2025-07-05 103304](https://github.com/user-attachments/assets/5b4297e8-0e95-47dd-aed7-e285dd9a646b)
 
-
 ---
 
-## 📚 Use Cases
+## Use Cases
 
-* 📌 Quick revision for DSA interviews
-* 🎓 Teaching aid for Object-Oriented Programming
-* 📁 Showcasing real-world application of OOP in C++
-* 🧠 Strengthening complexity analysis mindset
+* Quick revision for DSA interviews
+* Teaching aid for Object-Oriented Programming
+* Showcasing real-world application of OOP in C++
+* Strengthening complexity analysis mindset
 
